@@ -6,11 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>WTF is the #?</title>
 </head>
 
 <body>
-
+    <article>
+        <header>
+            <h1>Welcome to WTF is the #?</h1>
+        </header>
+        <p>The way this game is played is pretty simple:<br>
+            You'll get four guesses (generous, I know) to guess my super secret number between 1 and 20.
+            <p>FAQ:</p>
+            <p>Are '1' and '20' valid guesses?</p><br>
+            Ya, the number totally be 1 or 20 or anything in between.  It really depends upon my mood.
+    </article>
+    <!-- not the exact instructions, but I thought it would be cool to try and
+    use a table to give visual record of the guesses as well -->
+    <div class="guess-table">
+        <table id="numbers-table" cellPadding="25" border="1">
+            <tr>
+                <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+            </tr>
+            <tr>
+                <td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
+            </tr>
+            <tr>
+                <td>11</td><td>12</td><td>13</td><td>14</td><td>15</td>
+            </tr>
+            <tr>
+                <td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
+            </tr>
+        </table>
+    </div>
+    <div id="results-area">
+        <!-- track remaining tries -->
+        <p>You have <span></span> tries remaining</p>
+        <!-- want to say x was too high and y was too low
+        will need conditional to include or not include the word 'and' if I approach it this way -->
+        <p><span id="too-high"></span><span id="too-low"></span></p>
+    </div>
+    <div class="submit-button"><button>Submit My Guess</button></div>
+    An input of type number for specifying the guess
+    A button to click to submit the guess
+    Display of lose and win result
     <script src="app.js"></script>
 </body>
 
