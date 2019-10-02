@@ -1,15 +1,4 @@
-// TDD a compareNumbers function that:
-// Has two parameters: guess and correctNumber
-// Returns one of the following values:
-// 0 - the numbers are identical
-// -1 - the guessed number is too low
-// 1 - the guessed number is too high
-export const compareNumbers = (guess, correctNumber = 7) => {
-    //guess === correctNumber ? 0 : guess > correctNumber ? 1 : -1;
-    if (guess > correctNumber) return 1;
-    if (guess < correctNumber) return -1;
-    return 0; // guess === correctNumber
-};
+import { compareNumbers } from './functions.js';
 
 //export const compareNumbers = (guess, correctNumber) => 7;
 
@@ -24,7 +13,8 @@ export const generateRandom20 = () => Math.floor(Math.random() * Math.floor(20))
 
 const triesRemaining = document.getElementById('tries-remaining');
 const numTable = document.getElementById('numbers-table');
-const rawUserGuess = document.getElementById('user-guess');
+//const rawUserGuess = document.getElementByName('user-guess');
+const rawUserGuess = document.getElementById('user-guess-id');
 const submitButton = document.getElementById('make-guess');
 const playAgainButton = document.getElementById('play-again');
 const notifier = document.getElementById('notifier');
@@ -40,12 +30,13 @@ let tooLow = '';
 
 triesRemaining.innerText = 4;
 
+console.log('rawUserGuess.value ' + rawUserGuess);
 submitButton.addEventListener('click', () => updateTable(rawUserGuess.value));
 
 function updateTable(numGuessed) {
     console.log(numGuessed, '@updateTable');
     // numGuessed ISN'T LOGGING
-    document.getElementById("num" + numGuessed).click();
+    document.getElementById('num' + numGuessed).click();
 }
 
 // reload syntax from here: https://stackoverflow.com/questions/10839989/why-cant-i-pass-window-location-reload-as-an-argument-to-settimeout
@@ -106,9 +97,9 @@ if (numTable !== null) {
                 // game over if tries gets to zero
                 if (triesRemaining.innerText == 0) {
                     //setTimeout( function() {
-                        notifier.innerText = `SO sorry, ya LOST - it was ${hiddenNumber}!`;
-                        notifier.className = "loser-text";
-                        playAgainButton.className = "visible";
+                    notifier.innerText = `SO sorry, ya LOST - it was ${hiddenNumber}!`;
+                    notifier.className = "loser-text";
+                    playAgainButton.className = "visible";
                       //}, 250);
                 }
                 // this.$forceUpdate();
