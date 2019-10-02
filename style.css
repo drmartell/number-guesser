@@ -63,13 +63,15 @@ td {
     text-align: center;
 }
 
-#button-div {
+#button-div,
+#footer {
     width: 420px;
     text-align: center;
 }
 
 .play-again {
     visibility: hidden;
+    padding: 10px
 }
 
 .play-again-show {
@@ -83,3 +85,5 @@ td {
 .visible {
     visibility: visible;
 }
+
+/* Button CSS styling derived from MDN docs: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/button */

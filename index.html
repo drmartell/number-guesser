@@ -17,7 +17,8 @@
         <p>The way this game is played is pretty simple.</p>
         <p>You'll get four chances (generous, I know)<br>
         to guess my super secret number between 1 and 20.</p>
-        <p>Choose a square if you dare!</p>
+        <p>Choose a square if you dare!<br>
+        (Or enter a number below)</p>
         <!-- <p>FAQ:</p>
         <p>Are '1' and '20' valid guesses?</p><br> -->
         <!-- Ya, the number totally be 1 or 20 or anything in between.  It really depends upon my mood. -->
@@ -27,18 +28,25 @@
     <div class="table-div">
         <table id="numbers-table">
             <tr>
-                <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+                <td id="num1">1</td><td id="num2">2</td><td id="num3">3</td><td id="num4">4</td><td id="num5">5</td>
             </tr>
             <tr>
-                <td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
+                <td id="num6">6</td><td id="num7">7</td><td id="num8">8</td><td id="num9">9</td><td id="num10">10</td>
             </tr>
             <tr>
-                <td>11</td><td>12</td><td>13</td><td>14</td><td>15</td>
+                <td id="num11">11</td><td id="num12">12</td><td id="num13">13</td><td id="num14">14</td><td id="num15">15</td>
             </tr>
             <tr>
-                <td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
+                <td id="num16">16</td><td id="num17">17</td><td id="num18">18</td><td id="num19">19</td><td id="num20">20</td>
             </tr>
         </table>
+    </div>
+    <div id="alt-entry">
+        <form>
+            <p>You could also enter a guess here: <input type="number" name="user-guess" min="1" max="20" value="1">&nbsp;
+            <button id="make-guess">Guess</button>
+        </form>
+
     </div>
     <div id="results-area">
         <!-- track remaining tries -->
@@ -50,7 +58,9 @@
         <p><span id="too-low"></span></p>
     </div>
     <div id="button-div"><button id="play-again" class="hidden">Play Again</button></div>
+    <footer>
+        <div id="footer">Built @ <a href="https://www.alchemycodelab.com" target="_blank">alchemy</a> by 'Canadian Casey'</div>
+    </footer>
     <script type="module" src="./app.js"></script>
 </body>
-
 </html>

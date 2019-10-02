@@ -24,6 +24,8 @@ export const generateRandom20 = () => Math.floor(Math.random() * Math.floor(20))
 
 const triesRemaining = document.getElementById('tries-remaining');
 const numTable = document.getElementById('numbers-table');
+const rawUserGuess = document.getElementById('user-guess');
+const submitButton = document.getElementById('make-guess');
 const playAgainButton = document.getElementById('play-again');
 const notifier = document.getElementById('notifier');
 const tooHighSpan = document.getElementById('too-high');
@@ -32,13 +34,23 @@ const tooLowSpan = document.getElementById('too-low');
 const hiddenNumber = generateRandom20();
 console.log(hiddenNumber);
 //let triesRemaining = 4;
+//let userGuess = rawUserGuess.value;
 let tooHigh = '';
 let tooLow = '';
 
 triesRemaining.innerText = 4;
 
+submitButton.addEventListener('click', () => updateTable(rawUserGuess.value));
+
+function updateTable(numGuessed) {
+    console.log(numGuessed, '@updateTable');
+    // numGuessed ISN'T LOGGING
+    document.getElementById("num" + numGuessed).click();
+}
+
 // reload syntax from here: https://stackoverflow.com/questions/10839989/why-cant-i-pass-window-location-reload-as-an-argument-to-settimeout
 playAgainButton.addEventListener('click', () => {
+    console.log('reloading');
     playAgainButton.classname = "play-again";
     window.location.reload();
 });
@@ -54,7 +66,10 @@ if (numTable !== null) {
     for (let i = 0; i < numTable.rows.length; i++) {
         // iterate over cells within each row (cells.length indicates the number of cells)
         for (let j = 0; j < numTable.rows[i].cells.length; j++) {
-            numTable.rows[i].cells[j].addEventListener('click', function() {
+            //numTable.rows[i].cells[j].addEventListener('click', function() {
+            // console.log(numTable.rows[i].cells[j].id);
+            //numTable.rows[i].cells[j].addEventListener('click', function() {
+            document.getElementById(numTable.rows[i].cells[j].id).addEventListener('click', function() {
                 //alert(this.innerHTML);
                 // console.log(this);
                 // console.log(this.class);
