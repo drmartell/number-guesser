@@ -5,7 +5,6 @@
 // -1 - the guessed number is too low
 // 1 - the guessed number is too high
 export const compareNumbers = (guess, correctNumber = 7) => {
-    //guess === correctNumber ? 0 : guess > correctNumber ? 1 : -1;
     if (guess > correctNumber) return 1;
     if (guess < correctNumber) return -1;
     return 0; // guess === correctNumber

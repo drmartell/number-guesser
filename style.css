@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Patua+One|Tajawal&display=swap');
+/* font-family: 'Patua One', cursive; */
+/* font-family: 'Tajawal', sans-serif; */
+
+body {
+    font-family: 'Patua One', cursive;
+        display: grid;
+        height: 100vh;
+        margin: 0;
+        place-items: center center;
+}
+
 article {
     margin-left: 50px;
 }
@@ -14,7 +26,7 @@ table {
     color: black;
     cursor: pointer;
     font-weight: 800;
-    font-size: 16px;
+    font-size: 14px;
     align-self: center;
 }
 
@@ -84,6 +96,10 @@ td {
 
 .visible {
     visibility: visible;
+}
+
+.hint {
+    background-color: yellow;
 }
 
 /* Button CSS styling derived from MDN docs: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/button */

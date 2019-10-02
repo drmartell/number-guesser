@@ -1,15 +1,12 @@
 // IMPORT MODULES under test here:
-// import example from '../src/example.js';
-
 import { compareNumbers } from '../functions.js';
 
 const test = QUnit.test;
 
-test('should return 0 if userInput is equal to the default value of 7', function(assert) {
+test('should return 0 if userInput is equal to the default value of 7 per function definition', function(assert) {
     //Arrange
     // Set up your parameters and expectations
     const userNumber = 7;
-    //const correctNumber = 7;
     
     //Act 
     // Call the function you're testing and set the result to a const
@@ -17,7 +14,6 @@ test('should return 0 if userInput is equal to the default value of 7', function
     
     //Assert
     // Make assertions about what is expected valid result
-    //assert.equal(result, 0);
     assert.equal(result, 0);
 });
 
