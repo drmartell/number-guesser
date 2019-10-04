@@ -36,7 +36,7 @@ function updateTable(numGuessed) {
 
 function resetGame() {
     // reset button to invisible
-    playAgainButton.classname = "play-again";
+    playAgainButton.classname = 'play-again';
     // reload window for new game
     window.location.reload();
 }
@@ -59,27 +59,41 @@ if (numTable !== null) {
                     triesRemaining.innerText -= 1;
                     let numUserClicked = this.innerText;
                     if (compareNumbers(numUserClicked, secretNumber) === 1) {
-                        tooHigh += tooHigh.length > 0 ? ' and ' + numUserClicked : numUserClicked;
-                        tooHighSpan.innerText = `These numbers were too high: ${tooHigh}.`;
-                    }
-                    else if (compareNumbers(numUserClicked, secretNumber) === -1) {
-                        tooLow += tooLow.length > 0 ? ' and ' + numUserClicked : numUserClicked;
-                        tooLowSpan.innerText = `These numbers were too low: ${tooLow}.`;
-                    }
-                    else {
-                        notifier.innerText = `OMG, you WON on your ${(4 - triesRemaining.innerText) === 4 ? '4th' :  (4 - triesRemaining.innerText) === 3 ? '3rd' : (4 - triesRemaining.innerText) === 2 ? '2nd' : '1st'} try!`;                        triesRemaining.innerText = -1;
-                        notifier.className = 'winner-text';
-                        this.className = 'winner';
-                        playAgainButton.className = 'visible';
-                    }
+                        updateTooHigh(numUserClicked); 
+                    } else if (compareNumbers(numUserClicked, secretNumber) === -1) {
+                        updateTooLow(numUserClicked);
+                    } else {
+                        doWin()
                 }
                 // game over if tries gets to zero
                 if (parseInt(triesRemaining.innerText) === 0) {
-                    notifier.innerText = `SO sorry, ya LOST - it was ${secretNumber}!`;
-                    notifier.className = 'loser-text';
-                    playAgainButton.className = 'visible';
-                }
-            });
+                    doLoss()
+                };
+            };
         }
     }
 }
+        
+    
+function doLoss() {
+    notifier.innerText = `SO sorry, ya LOST - it was ${secretNumber}!`;
+    notifier.className = 'loser-text';
+    playAgainButton.className = 'visible';
+};
+    
+function doWin() {
+    notifier.innerText = `OMG, you WON on your ${(4 - triesRemaining.innerText) === 4 ? '4th' :  (4 - triesRemaining.innerText) === 3 ? '3rd' : (4 - triesRemaining.innerText) === 2 ? '2nd' : '1st'} try!`; triesRemaining.innerText = -1;
+    notifier.className = 'winner-text';
+    this.className = 'winner';
+    playAgainButton.className = 'visible';
+};
+
+function updateTooLow(userSelection) {
+    tooLow += tooLow.length > 0 ? ' and ' + userSelection : userSelection;
+    tooLowSpan.innerText = `These numbers were too low: ${tooLow}.`;
+}
+
+function updateTooHigh(userSelection) {
+    tooHigh += tooHigh.length > 0 ? ' and ' + userSelection : userSelection;
+    tooHighSpan.innerText = `These numbers were too high: ${tooHigh}.`
+};
