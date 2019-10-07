@@ -5,7 +5,10 @@
 // -1 - the guessed number is too low
 // 1 - the guessed number is too high
 export const compareNumbers = (guess, correctNumber = 7) => {
-    if (guess > correctNumber) return 1;
-    if (guess < correctNumber) return -1;
+    if (isNaN(guess) || Number(guess) < 1 || Number(guess) >= 21)
+        return 'num-error';
+    const sanitizedGuess = parseInt(guess);
+    if (sanitizedGuess > correctNumber) return 1;
+    if (sanitizedGuess < correctNumber) return -1;
     return 0; // guess === correctNumber
 };
