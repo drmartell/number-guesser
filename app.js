@@ -63,7 +63,7 @@ function doLoss(playButton) {
 }
     
 function doWin(playButton, clickedCell) {
-    notifier.innerText = `OMG, you WON on your ${(4 - triesRemaining.innerText) === 4 ? '4th' :  (4 - triesRemaining.innerText) === 3 ? '3rd' : (4 - triesRemaining.innerText) === 2 ? '2nd' : '1st'} try!`; triesRemaining.innerText = -1;
+    notifier.innerText = `OMG, you WON on your ${(4 - triesRemaining.innerText) === 4 ? '4th' : (4 - triesRemaining.innerText) === 3 ? '3rd' : (4 - triesRemaining.innerText) === 2 ? '2nd' : '1st'} try!`; triesRemaining.innerText = -1;
     notifier.className = 'winner-text';
     clickedCell.className = 'winner';
     playButton.className = 'visible';
@@ -76,5 +76,5 @@ function updateTooLow(userSelection) {
 
 function updateTooHigh(userSelection) {
     tooHigh += tooHigh.length > 0 ? ' and ' + userSelection : userSelection;
-    tooHighSpan.innerText = `These numbers were too high: ${tooHigh}.`
+    tooHighSpan.innerText = `These numbers were too high: ${tooHigh}.`;
 }
