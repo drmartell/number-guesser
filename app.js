@@ -36,7 +36,10 @@ function userState(thisCell) {
         thisCell.className = 'chosen';
         triesRemaining.innerText -= 1;
         let numUserClicked = thisCell.innerText;
-        if (compareNumbers(numUserClicked, secretNumber) === 1) {
+        if (compareNumbers(numUserClicked, secretNumber) === 'num-error') {
+            alert(`Please enter a whole number between 1 and 20`);
+        }
+        else if (compareNumbers(numUserClicked, secretNumber) === 1) {
             updateTooHigh(numUserClicked); 
         } else if (compareNumbers(numUserClicked, secretNumber) === -1) {
             updateTooLow(numUserClicked);
