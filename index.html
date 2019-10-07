@@ -6,12 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>WTH is the #?</title>
 </head>
 
 <body>
-
-    <script src="app.js"></script>
+    <article>
+        <header>
+            <h1>Welcome to WTH is the #?</h1>
+        </header>
+        <p>The way this game is played is pretty simple.</p>
+        <p>You'll get four chances (generous, I know)<br>
+        to guess my super secret number between 1 and 20.</p>
+        <p>Choose a square if you dare!<br>
+        (Or enter a number below)</p>
+        <!-- <p>FAQ:</p>
+        <p>Are '1' and '20' valid guesses?</p><br> -->
+        <!-- Ya, the number totally be 1 or 20 or anything in between.  It really depends upon my mood. -->
+    </article>
+    <!-- not the exact instructions, but I thought it would be cool to try and
+    use a table to give visual record of the guesses as well -->
+    <div class="table-div">
+        <table id="numbers-table">
+            <tr>
+                <td id="num1">1</td><td id="num2">2</td><td id="num3">3</td><td id="num4">4</td><td id="num5">5</td>
+            </tr>
+            <tr>
+                <td id="num6">6</td><td id="num7">7</td><td id="num8">8</td><td id="num9">9</td><td id="num10">10</td>
+            </tr>
+            <tr>
+                <td id="num11">11</td><td id="num12">12</td><td id="num13">13</td><td id="num14">14</td><td id="num15">15</td>
+            </tr>
+            <tr>
+                <td id="num16">16</td><td id="num17">17</td><td id="num18">18</td><td id="num19">19</td><td id="num20">20</td>
+            </tr>
+        </table>
+    </div>
+    <div id="alt-entry">
+        <p>You could also enter a guess here: <input type="number" name="user-guess" min="1" max="20" value="1" id="user-guess-id">&nbsp;
+        <button id="make-guess">Guess</button>
+    </div>
+    <div id="results-area">
+        <!-- track remaining tries -->
+        <p id="notifier">You have <span id="tries-remaining"></span> guesses remaining.</p>
+        <!-- want to say x was too high and y was too low
+        will need conditional to include or not include the word 'and' if I approach it this way -->
+        <p>Hint, hint...</p>
+        <p><span class="hint" id="too-high"></span></p>
+        <p><span class="hint" id="too-low"></span></p>
+    </div>
+    <div id="button-div"><button id="play-again" class="hidden">Play Again</button></div>
+    <footer>
+        <div id="footer"><p>Built @ <a href="https://www.alchemycodelab.com" target="_blank">alchemy</a> by 'Canadian Casey'</p></div>
+    </footer>
+    <script type="module" src="./app.js"></script>
 </body>
-
 </html>

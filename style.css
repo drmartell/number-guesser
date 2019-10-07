@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Patua+One|Tajawal&display=swap');
+/* font-family: 'Patua One', cursive; */
+/* font-family: 'Tajawal', sans-serif; */
+
+body {
+    font-family: 'Patua One', cursive;
+        display: grid;
+        height: 100vh;
+        margin: 0;
+        place-items: center center;
+}
+
+article {
+    margin-left: 50px;
+}
+
+.table-div {
+    color: black;
+    width: 420px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    color: black;
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 14px;
+    align-self: center;
+}
+
+td {
+    width: 75px;
+    height: 75px;
+    /* padding: 25px; */
+    border: 1px solid black;
+    text-align: center;
+}
+
+.chosen {
+    color: white;
+    background-color: crimson;
+    font-size: 30px;
+}
+
+.winner {
+    color: white;
+    background-color: goldenrod;
+    font-size: 30px;
+    border: 5px solid black;
+}
+
+.winner-text {
+    color: white;
+    background-color: goldenrod;
+    font-size: 30px;
+    border: 5px solid black;
+    width: 410px;
+    text-align: center;
+}
+
+.loser-text {
+    color: white;
+    background-color: crimson;
+    font-size: 30px;
+    border: 5px solid black;
+    width: 410px;
+    text-align: center;
+}
+
+#results-area {
+    margin-left: 0px;
+    width: 420px;
+    text-align: center;
+}
+
+#button-div,
+#footer {
+    width: 420px;
+    text-align: center;
+}
+
+.play-again {
+    visibility: hidden;
+    padding: 10px
+}
+
+.play-again-show {
+    visibility: visible;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.hint {
+    background-color: yellow;
+}
+
+/* Button CSS styling derived from MDN docs: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/button */
